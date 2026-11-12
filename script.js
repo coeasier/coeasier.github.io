@@ -81,7 +81,7 @@ const PROJECTS = [
     ],
     result: "A complete Shopify store experience, from the first visit to checkout, ready for the brand's own catalogue.",
     tags: ["Shopify", "E-commerce", "Storefront design"],
-    links: [{ label: "Live store", url: "https://mohamedlghazi.github.io/glowskin/" }],
+    links: [{ label: "Live store", url: "https://coeasier.github.io/glowskin/" }],
     shots: [
       ["glowskin/01-home", "Home page with the brand promise and key numbers"],
       ["glowskin/02-products", "Product catalogue with category filters"],
@@ -111,7 +111,7 @@ const PROJECTS = [
     ],
     result: "A complete store experience with its own look, from the first visit to a confirmed order, ready for the brand's own catalogue.",
     tags: ["Shopify", "E-commerce", "Storefront design"],
-    links: [],
+    links: [{ label: "Live store", url: "https://coeasier.github.io/urbanwear/" }],
     shots: [
       ["urbanwear/01-home", "Home page with the brand gradient and a direct way into the collection"],
       ["urbanwear/02-collection", "Collection with filters, sorting and quick-add by size"],

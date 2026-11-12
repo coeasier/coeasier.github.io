@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UrbanWear — Streetwear · Casablanca</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230a0607%27/%3E%3Cpath d=%27M4 16c0-6 5-8 9-5 3 2.300 4 2.300 7 0 4-3 8 0 8 5s-4 8-8 5c-3-2.300-4-2.300-7 0-4 3-9 1-9-5z%27 fill=%27%23e5132b%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0607;--fg:#f4f1ef;--mut:#8f8a8c;--line:#261b1e;--acc:#e5132b;--accfg:#ffffff;--card:#140d0f;--blue:#bde1f6;--blue2:#9fcbe6;--ink:#0a0607;--r:2px;--rr:2px;--hf:"Archivo","Helvetica Neue",Arial,sans-serif;--ht:uppercase;--hw:800;--hl:-.04em;--mono:"Manrope","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 "Manrope","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--hf);text-transform:uppercase;margin:0;font-weight:700}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit}svg{display:block}
+.wrap{max-width:1360px;margin:0 auto;padding:0 32px}
+.mono,.kick{font:500 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.kick{color:var(--mut);display:block;margin-bottom:18px}
+/* barre du haut */
+.top{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px}
+.logo{font:800 17px var(--hf);letter-spacing:-.04em;display:flex;align-items:center;gap:10px}.logo svg{display:block}
+.links{display:flex;gap:28px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase}.links a{color:var(--mut);transition:color .25s}.links a:hover{color:var(--fg)}
+.act{display:flex;gap:8px;justify-content:flex-end}
+.ab{background:none;border:1px solid var(--line);height:38px;padding:0 14px;display:flex;align-items:center;gap:8px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;transition:border-color .25s,background .25s,color .25s}
+.ab:hover{border-color:var(--fg)}.ab b{font-weight:500;color:var(--acc)}
+/* accueil */
+.hero{position:relative;isolation:isolate;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(55% 75% at 88% 92%,rgba(229,19,43,.62),transparent 70%),radial-gradient(35% 45% at 100% 100%,rgba(255,86,28,.4),transparent 72%),radial-gradient(40% 50% at 0% 0%,rgba(229,19,43,.14),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.09;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding-block:56px 64px;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px)}
+.hero h1{font-weight:800;font-size:clamp(44px,7vw,112px);line-height:.92;letter-spacing:-.055em}.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p.lead{color:var(--mut);max-width:420px;margin:28px 0 36px;font-size:16px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#fff;border:1px solid var(--acc);border-radius:var(--r);padding:15px 26px;font:700 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.btn.o{background:rgba(10,6,7,.35);color:var(--fg);border-color:rgba(244,241,239,.3)}.btn.o:hover{border-color:var(--blue);background:var(--blue);color:var(--ink)}
+.sheet{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:min(640px,72vh)}
+.hf{position:relative;margin:0;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer;display:grid;place-items:center}
+.hf:nth-child(1){grid-row:span 2}
+.hf>svg{width:70%}
+.hf .sx-pi{transition:opacity .5s,transform .8s cubic-bezier(.2,.7,.2,1)}.hf:hover .sx-pi{transform:scale(1.03)}
+.hf figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));display:flex;justify-content:space-between;gap:10px;z-index:2;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.hf figcaption span:first-child{color:var(--blue)}
+/* chiffres : un simple tableau, pas de cartes */
+.facts{background:var(--blue);color:var(--ink)}
+.fg{display:grid;grid-template-columns:repeat(4,1fr)}
+.fg>div{padding:34px 24px 36px;border-left:1px solid rgba(10,6,7,.2)}.fg>div:first-child{border-left:0;padding-left:0}
+.fg small{display:block;font:600 10.5px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#35505f;margin-bottom:14px}
+.fg b{font:700 clamp(32px,3.8vw,56px)/1 var(--hf);letter-spacing:-.05em}.fg b i{font-style:normal;color:var(--acc);font-size:.45em;margin-left:4px;letter-spacing:0}
+section{padding:96px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.sh h2{font-size:clamp(28px,3.8vw,54px);line-height:1;letter-spacing:-.045em;font-weight:700}
+.link{background:none;border:0;border-bottom:1px solid var(--mut);padding:0 0 3px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg);display:inline-flex;gap:8px;align-items:center;transition:border-color .25s,color .25s}.link:hover{color:var(--acc);border-color:var(--acc)}
+.bar{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:0}
+.tabs{display:flex;gap:22px}.tabs button,.chips button{background:none;border:0;padding:6px 0;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.tabs button:hover,.chips button:hover{color:var(--fg)}.tabs button.on,.chips button.on{color:var(--fg);border-color:var(--acc)}
+.chips{display:flex;gap:20px;flex-wrap:wrap;flex:1}
+select,.fav{background:none;color:var(--fg);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:6px 20px 6px 0;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase}select option{background:#141416;color:var(--fg)}
+.fav.on{color:var(--acc);border-color:var(--acc)}
+.cnt{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);padding:14px 0}
+/* grille : lignes fines, aucune carte arrondie */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--card);display:grid;place-items:center}
+.ph>svg{width:78%}
+.ph .sx-pi{transition:opacity .5s,transform .8s cubic-bezier(.2,.7,.2,1)}.card:hover .ph .sx-pi{transform:scale(1.03)}
+.tag{position:absolute;left:12px;top:12px;z-index:3;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--bg);color:var(--fg);padding:5px 8px}.tag.hot{background:var(--acc);color:#fff}
+.heart{position:absolute;right:10px;top:10px;width:34px;height:34px;border:0;background:var(--bg);display:grid;place-items:center;z-index:3;transition:background .25s}.heart:hover{background:var(--card)}
+.heart svg{width:16px;fill:none;stroke:var(--fg);stroke-width:1.8}.heart.on svg{fill:var(--acc);stroke:var(--acc)}
+.sizes{position:absolute;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 12px 12px;transform:translateY(101%);transition:transform .3s ease;z-index:3}
+.card:hover .sizes{transform:none}
+.sizes p{margin:0 0 8px;font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.sizes div{display:flex;gap:6px;flex-wrap:wrap}.sizes button{flex:1;min-width:34px;background:none;border:1px solid var(--line);border-radius:0;padding:7px 0;font:500 11px var(--mono);transition:background .2s,color .2s,border-color .2s}.sizes button:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+.inf{padding:14px 14px 18px}
+.r1{display:flex;gap:12px;align-items:baseline}.ix{font:500 10.5px var(--mono);color:var(--mut);letter-spacing:.1em}
+.inf h3{font:600 14px "Manrope","Helvetica Neue",Arial,sans-serif;text-transform:none;letter-spacing:0;line-height:1.3}
+.r2{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font:500 12px var(--mono);letter-spacing:.04em}.r2 s{color:var(--mut);margin-left:8px}
+.rt{display:flex;align-items:center;gap:5px;color:var(--mut)}.rt svg{width:11px;height:11px;fill:var(--acc);stroke:none}
+.dots{display:flex;gap:6px;margin-top:10px}.dots i{width:14px;height:14px;border:1px solid var(--line);cursor:pointer}.dots i.on{outline:1px solid var(--acc);outline-offset:2px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:80px 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* lookbook */
+.look{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.lk{position:relative;height:min(620px,78vh);border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--card);display:flex;align-items:flex-end;isolation:isolate}
+.lk .art{position:absolute;inset:0;z-index:-1;display:flex;justify-content:center;align-items:center}.lk .art svg{height:62%;width:auto;margin:0 -14px}
+.lk .sx-pi{z-index:-1;transition:opacity .5s,transform .8s cubic-bezier(.2,.7,.2,1)}.lk:hover .sx-pi{transform:scale(1.03)}
+.lk::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.78));z-index:0;pointer-events:none}
+.lk .t{position:relative;z-index:2;width:100%;padding:24px;display:flex;justify-content:space-between;align-items:end;gap:14px}
+.lk h3{font-size:clamp(18px,1.9vw,26px);letter-spacing:-.04em}.lk p{margin:6px 0 0;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#cfcfc8}
+.lk .btn{padding:11px 14px;white-space:nowrap;background:none;color:var(--fg);border-color:rgba(255,255,255,.35)}.lk .btn:hover{background:var(--blue);color:var(--ink);border-color:var(--blue)}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mut);font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.big{font:800 clamp(48px,14.5vw,210px)/.8 var(--hf);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(189,225,246,.2);text-align:center;padding:60px 0 0;overflow:hidden;user-select:none}
+/* fenêtre (guide des tailles) */
+.md{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:800;padding:20px}.md.on{display:flex}
+.mb{background:var(--card);border:1px solid var(--line);max-width:560px;width:100%;padding:34px;position:relative;max-height:92vh;overflow:auto}
+.mb h2{font-size:26px;letter-spacing:-.04em}.mb .x{position:absolute;right:14px;top:14px;border:0;background:var(--bg);width:34px;height:34px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font:500 13px var(--mono)}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:center}th{color:var(--mut);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em}td:first-child{color:var(--acc)}
+.fd{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;background:var(--bg);padding:16px}.fd label{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:block}.fd input{width:100%;background:var(--card);border:1px solid var(--line);padding:10px;color:var(--fg);font:inherit;margin-top:4px}
+.res{margin-top:12px;font-size:15px;min-height:24px}.res b{color:var(--acc);font:700 20px var(--hf)}
+/* apparitions : un fondu et 12 px, rien d'autre */
+html [data-rv]{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;transition-delay:0s}
+html [data-rv].in,html [data-rv='n']{opacity:1;transform:none}
+.ent{opacity:0;animation:ent .7s ease forwards;animation-delay:var(--d,0s)}@keyframes ent{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html [data-rv]{opacity:1;transform:none;transition:none}.ent{animation:none;opacity:1}}
+/* sections partagées (à propos, avis, contact, newsletter) : même langage éditorial */
+.sx-sec{padding:96px 0}.sx-w{max-width:1360px;padding:0 32px}
+.sx-eye{font:500 11px var(--mono);letter-spacing:.14em;color:var(--mut);margin-bottom:18px}
+.sx-sec h2{font:700 clamp(28px,3.8vw,54px)/1 var(--hf);letter-spacing:-.045em}
+.sx-about{border-top:1px solid var(--line);padding-top:48px}.sx-about p{max-width:480px}
+.sx-pt i{background:none;border:1px solid var(--line);border-radius:0;color:var(--acc)}
+.sx-stats{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}.sx-stats div{background:none;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:28px 24px}
+.sx-stats b{font:500 clamp(28px,3vw,44px)/1 var(--hf);letter-spacing:-.04em;color:var(--fg)}.sx-stats span{font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.sx-rate b{font:500 34px var(--hf)}
+.sx-revs{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}.sx-rev{background:none;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:28px}
+.sx-rev .st{color:var(--acc)}.sx-av{border-radius:0;background:var(--card);color:var(--acc);border:1px solid var(--line)}
+.sx-inf i{background:none;border:1px solid var(--line);border-radius:0;color:var(--acc)}
+.sx-fm{background:none;border:1px solid var(--line);border-radius:0}.sx-fm input,.sx-fm textarea,.sx-fm select{background:var(--bg);border-radius:0}
+.sx-btn{border-radius:0;font:700 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;background:var(--acc);color:#fff}.sx-btn:hover{transform:none;opacity:1;background:var(--blue);color:var(--ink)}
+.sx-nl{border-radius:0;background:radial-gradient(70% 120% at 100% 100%,#ff4a1c,transparent 70%),linear-gradient(135deg,#e5132b,#7d0a18 75%,#0a0607);color:#fff}.sx-nl input,.sx-nl button{border-radius:0}.sx-nl button{font:700 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;background:var(--blue);color:var(--ink)}.sx-nl h2{color:#fff}
+#apropos{--bg:#bde1f6;--fg:#0a0607;--mut:#35505f;--line:rgba(10,6,7,.22);--card:#a9d3ec;background:var(--bg);color:var(--fg)}
+#apropos .sx-pt i{color:var(--acc)}#apropos .sx-about{border-top:0;padding-top:0}
+@media(max-width:1000px){.hero .wrap{grid-template-columns:1fr;gap:36px;min-height:0;padding-block:40px}.sheet{height:520px}.grid{grid-template-columns:repeat(2,1fr)}.look{grid-template-columns:1fr}.lk{height:460px}.links{display:none}.top .wrap{grid-template-columns:1fr auto}.fg{grid-template-columns:1fr 1fr}.fg>div:nth-child(3){border-left:0;padding-left:0}.fg>div:nth-child(n+3){border-top:1px solid var(--line)}.sx-revs,.sx-stats{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap,.sx-w{padding:0 16px}section,.sx-sec{padding:64px 0}.ab .lb{display:none}.ab{padding:0 11px}.sheet{height:420px;gap:8px}.hero h1{font-size:40px}.bar{gap:16px}.chips{gap:14px}.look .lk{height:400px}.inf{padding:12px 10px 14px}.inf h3{font-size:13px}.r2{font-size:11px}.heart{width:30px;height:30px}}
+@media(hover:none){.sizes{display:none}}
+/* ===== v4 ===== */
+h1,h2,h3{font-stretch:125%;font-weight:800;letter-spacing:-.02em}
+.kick,.mono,.links,.ab,.btn,.tag,.cnt,.tabs button,.chips button,.link,select,.fav,.sizes p,.sizes button,.ix,.r2,footer,.sx-eye,.sx-btn{font-family:"Manrope","Helvetica Neue",Arial,sans-serif}
+.top{border-bottom:0}
+.links{font-weight:700;letter-spacing:.1em;gap:34px}
+.ab{border:0;border-radius:12px;background:none;padding:0 12px;font-weight:700;letter-spacing:.08em}
+.ab:hover{background:rgba(244,241,239,.07);border-color:transparent}
+.ab b{color:var(--acc)}
+.ab.cart{background:linear-gradient(180deg,#ff4258,#e5132b 52%,#c10f24);color:#fff;padding:0 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 3px 0 #8a0b1a,0 10px 18px -8px rgba(229,19,43,.6);transition:transform .15s,box-shadow .15s}
+.ab.cart:hover{background:linear-gradient(180deg,#ff4258,#e5132b 52%,#c10f24);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 4px 0 #8a0b1a,0 14px 22px -8px rgba(229,19,43,.7)}
+.ab.cart:active{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 #8a0b1a,0 4px 8px -4px rgba(229,19,43,.6)}
+.ab.cart b{color:#fff}
+/* boutons 3D */
+.btn,.sx-btn{border:0;border-radius:13px;padding:17px 30px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#ff4258,#e5132b 52%,#c10f24);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.14),0 5px 0 #8a0b1a,0 16px 26px -10px rgba(229,19,43,.65);transition:transform .15s,box-shadow .15s,filter .2s}
+.btn:hover,.sx-btn:hover{background:linear-gradient(180deg,#ff4258,#e5132b 52%,#c10f24);color:#fff;border:0;transform:translateY(-2px);opacity:1;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.14),0 7px 0 #8a0b1a,0 20px 30px -10px rgba(229,19,43,.75)}
+.btn:active,.sx-btn:active{transform:translateY(5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 #8a0b1a,0 4px 10px -4px rgba(229,19,43,.6)}
+.btn.o,.lk .btn,.sx-nl button{color:var(--ink);background:linear-gradient(180deg,#e4f3fd,#bde1f6 55%,#9fcbe6);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 0 rgba(0,0,0,.08),0 5px 0 #5f8ea9,0 16px 26px -10px rgba(159,203,230,.55);border:0}
+.btn.o:hover,.lk .btn:hover,.sx-nl button:hover{background:linear-gradient(180deg,#e4f3fd,#bde1f6 55%,#9fcbe6);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 0 rgba(0,0,0,.08),0 7px 0 #5f8ea9,0 20px 30px -10px rgba(159,203,230,.7)}
+.btn.o:active,.lk .btn:active,.sx-nl button:active{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 0 0 #5f8ea9,0 4px 10px -4px rgba(159,203,230,.6)}
+.lk .btn{padding:14px 18px;white-space:nowrap}
+.sx-nl button{border-radius:13px;font-weight:800;letter-spacing:.08em}
+.sizes button{border-radius:8px}
+.cta{gap:18px}
+/* accueil : grand panneau dégradé grainé, sans produits */
+.hero{margin:0 14px 14px;border:0;border-radius:30px;background:#0a0607;min-height:calc(100svh - 92px)}
+.hero::before{background:radial-gradient(52% 62% at 0% 104%,#fff 0,#e1f2fd 14%,rgba(189,225,246,.8) 30%,rgba(159,203,230,.25) 50%,transparent 68%),radial-gradient(62% 58% at 100% 0%,rgba(229,19,43,.95),rgba(229,19,43,.35) 45%,transparent 72%),radial-gradient(40% 40% at 64% 84%,rgba(159,203,230,.42),transparent 72%),radial-gradient(36% 40% at 100% 100%,rgba(255,86,28,.35),transparent 70%)}
+.hero::after{opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='1.9' intercept='-.45'/><feFuncG type='linear' slope='1.9' intercept='-.45'/><feFuncB type='linear' slope='1.9' intercept='-.45'/></feComponentTransfer></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.hero .wrap{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;max-width:none;padding:clamp(48px,11vh,120px) clamp(24px,5vw,72px) 56px;min-height:calc(100svh - 92px);gap:0}
+.hero .wrap>div{max-width:900px}
+.hero h1{font-size:clamp(54px,10.5vw,176px);line-height:.88;letter-spacing:-.045em;font-weight:900}
+.hero h1 em{color:#fff}
+.hero p.lead{color:#e9e4e6;font-size:17px;max-width:460px;margin:30px 0 40px}
+.hero .kick{color:#f4f1ef;opacity:.85}
+@media(max-width:1000px){.hero .wrap{padding:44px 22px 48px;min-height:calc(100svh - 92px)}.hero h1{font-size:clamp(48px,15vw,110px)}}
+@media(max-width:600px){.hero{margin:0 8px 8px;border-radius:22px}.hero h1{font-size:15vw}.btn{padding:15px 22px}}
+/* ===== v5 : boutons = liens animés au survol ===== */
+.btn,.btn.o,.lk .btn,.sx-btn,.sx-nl button,.btn:hover,.btn.o:hover,.lk .btn:hover,.sx-btn:hover,.sx-nl button:hover,.btn:active,.btn.o:active,.lk .btn:active,.sx-btn:active,.sx-nl button:active{background:none;box-shadow:none;border:0;border-radius:0;transform:none;filter:none;opacity:1}
+.btn,.btn.o,.lk .btn,.sx-btn,.sx-nl button{position:relative;display:inline-flex;align-items:center;gap:10px;padding:8px 0 10px;color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:color .3s,letter-spacing .35s cubic-bezier(.2,.7,.2,1)}
+.btn::after,.sx-btn::after,.sx-nl button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:currentColor;transform:scaleX(.22);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.btn.o,.lk .btn{color:rgba(244,241,239,.78)}
+.btn:hover,.btn.o:hover,.lk .btn:hover,.sx-btn:hover,.sx-nl button:hover{color:var(--blue);letter-spacing:.17em}
+.btn:hover::after,.sx-btn:hover::after,.sx-nl button:hover::after{transform:scaleX(1)}
+.btn:focus-visible,.sx-btn:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.lk .btn{padding:8px 0 10px}
+.cta{gap:36px;align-items:center}
+.sx-nl button{color:#fff}.sx-nl button:hover{color:var(--blue)}
+.ab.cart,.ab.cart:hover,.ab.cart:active{background:none;box-shadow:none;transform:none;color:var(--fg);padding:0 12px}
+.ab.cart:hover{background:rgba(244,241,239,.07)}
+.ab.cart b{color:var(--acc)}
+/* ===== v6 : fond plein écran, barre transparente sans cadres ===== */
+.top{position:fixed;left:0;right:0;top:0;background:transparent;border:0;transition:background .3s}
+.top.sc{background:rgba(10,6,7,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.lite .top.sc{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(10,6,7,.97)}
+.hero{margin:0;border-radius:0;min-height:100svh}
+.hero .wrap{min-height:100svh;padding-top:clamp(110px,18vh,170px)}
+.ab,.ab:hover,.ab.cart,.ab.cart:hover{border:0;outline:0;box-shadow:none}
+/* ===== v7 : chiffres en cartes 3D ===== */
+.facts{padding:48px 0 54px!important}
+.fg{gap:20px}
+.fg>div,.fg>div:first-child,.fg>div:nth-child(3),.fg>div:nth-child(n+3){border:0;padding:30px 28px 32px;border-radius:20px;background:linear-gradient(180deg,#ffffff,#e6f4fd 70%,#d4eaf8);box-shadow:inset 0 1px 0 #fff,0 7px 0 #6fa3c4,0 22px 32px -14px rgba(10,6,7,.45);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+.fg>div:hover{transform:translateY(-5px);box-shadow:inset 0 1px 0 #fff,0 12px 0 #6fa3c4,0 30px 38px -14px rgba(10,6,7,.5)}
+@media(max-width:1000px){.fg{gap:14px}.fg>div,.fg>div:first-child,.fg>div:nth-child(3),.fg>div:nth-child(n+3){padding:22px 18px 24px}}
+/* ===== v8 : chiffres en cartes 3D sombres, dans le thème ===== */
+.facts{background:var(--bg);color:var(--fg);padding:40px 0 20px!important}
+.fg>div,.fg>div:first-child,.fg>div:nth-child(3),.fg>div:nth-child(n+3){background:linear-gradient(180deg,#221619,#150d0f);border:1px solid #2e2024;box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 6px 0 #070304,0 22px 30px -14px rgba(0,0,0,.9)}
+.fg>div:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 0 #070304,0 30px 38px -14px rgba(0,0,0,.95)}
+.fg small{color:var(--mut)}
+.fg b{color:var(--fg)}
+/* ===== v9 : lookbook = vraies photos produits, haut + bas côte à côte ===== */
+.lk .pair{position:absolute;inset:0;z-index:-1;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bg)}
+.lk .hp{position:relative;overflow:hidden;background:#d6d6d8}
+.lk .hp .sx-pi{z-index:0;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lk .t p b{color:var(--fg);font-weight:800}
+/* ===== v10 : sélection de pièces seules ===== */
+.lk .pair{grid-template-columns:1fr}
+/* ===== v11 : commande, guide des tailles, avis, contact, menus déroulants ===== */
+.cx-co,.md{background:rgba(5,2,3,.74);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.lite .cx-co,.lite .md{-webkit-backdrop-filter:none;backdrop-filter:none}
+.cx-co .cx-cb{border-radius:28px;border:1px solid #2a1c20;background:#0e0809;max-width:940px;box-shadow:0 50px 110px -30px #000,inset 0 1px 0 rgba(255,255,255,.05)}
+.cx-co .cx-cb .cx-x{background:rgba(244,241,239,.07);border-radius:50%;width:40px;height:40px;top:16px;right:16px;font-size:16px;transition:background .25s,transform .3s}
+.cx-co .cx-cb .cx-x:hover{background:rgba(244,241,239,.16);transform:rotate(90deg)}
+.cx-co .cx-f{padding:46px 40px}
+.cx-co .cx-f h2{font-size:28px;letter-spacing:-.02em;font-stretch:125%;font-weight:800}
+.cx-co .cx-f>p{font-size:13.5px;margin-bottom:26px}
+.cx-co .cx-f label{font:700 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+.cx-co .cx-f input:not([type=radio]),.cx-co .cx-f select,.sx-fm input,.sx-fm textarea{margin-top:9px;background:#171011;border:1px solid #2a1c20;border-radius:14px;padding:14px 16px;font:500 14.5px var(--mono);letter-spacing:0;text-transform:none;color:var(--fg);transition:border-color .25s,box-shadow .25s,background .25s}
+.cx-co .cx-f input::placeholder,.sx-fm input::placeholder,.sx-fm textarea::placeholder{color:#5d5457}
+.cx-co .cx-f input:not([type=radio]):focus,.sx-fm input:focus,.sx-fm textarea:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(229,19,43,.16);background:#1b1213}
+.cx-co .cx-f .bad{border-color:#ff4a5c!important;box-shadow:0 0 0 4px rgba(255,74,92,.14)}
+.cx-co .cx-pm2{gap:10px;margin:8px 0 24px}
+.cx-co .cx-pm2 label{border-radius:14px;border:1px solid #2a1c20;background:#171011;padding:16px;font:600 14px var(--mono);letter-spacing:0;text-transform:none;color:var(--fg);margin:0;transition:border-color .25s,background .25s}
+.cx-co .cx-pm2 label:has(input:checked){border-color:var(--acc);background:rgba(229,19,43,.09)}
+.cx-co .cx-pm2 input{-webkit-appearance:none;appearance:none;width:18px;height:18px;margin:0;padding:0;border-radius:50%;border:2px solid #4a3a3e;background:none;display:grid;place-items:center;box-shadow:none}
+.cx-co .cx-pm2 input::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);transform:scale(0);transition:transform .2s}
+.cx-co .cx-pm2 input:checked{border-color:var(--acc)}.cx-co .cx-pm2 input:checked::after{transform:scale(1)}
+.cx-co .cx-pay,.cx-dr .cx-pay,.sx-fm .sx-btn{border-radius:14px;padding:18px;background:var(--acc);color:#fff;font:800 12.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:background .25s,letter-spacing .3s;display:flex;justify-content:center;width:100%;border:0}
+.cx-co .cx-pay:hover,.cx-dr .cx-pay:hover,.sx-fm .sx-btn:hover{background:#ff2a42;opacity:1;transform:none;letter-spacing:.15em;color:#fff}
+.sx-fm .sx-btn::after{display:none}
+.cx-co .cx-sum{background:#140d0f;padding:46px 34px;border-left:1px solid #2a1c20}
+.cx-co .cx-sum h3{font:800 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:22px}
+.cx-co .cx-sl .cx-th{border-radius:12px;background:#0e0809;border:1px solid #2a1c20}
+.cx-co .cx-sl .cx-th em{background:var(--acc);color:#fff}
+.cx-co .cx-sum hr{border-top-color:#2a1c20}
+.cx-co .cx-row.t{font-size:19px;font-weight:800}
+.cx-co .cx-ok i{background:var(--acc);box-shadow:0 14px 34px -10px rgba(229,19,43,.7)}
+/* guide des tailles */
+.md .mb{background:#0e0809;border:1px solid #2a1c20;border-radius:28px;padding:44px 40px;max-width:600px;box-shadow:0 50px 110px -30px #000}
+.md .mb .x{background:rgba(244,241,239,.07);border:0;border-radius:50%;width:40px;height:40px;top:16px;right:16px;color:var(--fg);font-size:16px;transition:background .25s,transform .3s}
+.md .mb .x:hover{background:rgba(244,241,239,.16);transform:rotate(90deg)}
+.mb table{border-collapse:separate;border-spacing:0 6px;margin:22px 0 14px}
+.mb th{border:0;font:700 10px var(--mono);letter-spacing:.16em;padding:6px 10px}
+.mb td{border:0;background:#150e10;padding:13px 10px;font:600 13.5px var(--mono)}
+.mb td:first-child{border-radius:12px 0 0 12px;color:var(--acc);font-weight:800}.mb td:last-child{border-radius:0 12px 12px 0}
+.mb .fd{background:#140d0f;border:1px solid #2a1c20;border-radius:18px;padding:18px}
+.mb .fd input{background:#1b1213;border:1px solid #2a1c20;border-radius:12px;padding:12px 14px;font:500 14px var(--mono);transition:border-color .25s,box-shadow .25s}
+.mb .fd input:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 4px rgba(229,19,43,.16)}
+.mb .fd .btn{padding:8px 0 10px!important}
+.mb .res b{color:var(--acc)}
+/* avis et contact */
+body .sx-revs{gap:18px;border:0}
+body .sx-rev{background:linear-gradient(180deg,#171011,#110a0c);border:1px solid #2a1c20;border-radius:22px;padding:30px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s}
+body .sx-rev:hover{transform:translateY(-4px);border-color:#4a3a3e}
+body .sx-rev p{font-size:15.5px;line-height:1.55}
+body .sx-av{border-radius:50%;border:0;background:var(--acc);color:#fff}
+body .sx-fm{background:#0f0a0b;border:1px solid #2a1c20;border-radius:26px;padding:34px;gap:18px}
+body .sx-fm label{font:700 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+body .sx-inf i{border:1px solid #2a1c20;background:#140d0f}
+/* menus déroulants */
+select.dd-n{display:none!important}
+.dd{position:relative;display:inline-block;min-width:160px}
+.dd>button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;background:#171011;border:1px solid #2a1c20;border-radius:14px;padding:12px 14px 12px 16px;color:var(--fg);font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:border-color .25s,background .25s}
+.dd>button:hover,.dd.on>button{border-color:#4a3a3e}
+.dd>button svg{width:14px;height:14px;flex:none;color:var(--mut);transition:transform .25s}.dd.on>button svg{transform:rotate(180deg)}
+.dd ul{position:absolute;left:0;top:calc(100% + 8px);z-index:80;min-width:100%;width:max-content;max-height:260px;overflow:auto;margin:0;padding:6px;list-style:none;background:#140d0f;border:1px solid #2a1c20;border-radius:16px;box-shadow:0 26px 60px -14px #000;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .2s,transform .2s}
+.dd.up ul{top:auto;bottom:calc(100% + 8px);transform:translateY(6px)}
+.dd.on ul{opacity:1;transform:none;pointer-events:auto}
+.dd li{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:11px 12px;border-radius:10px;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);cursor:pointer;transition:background .15s,color .15s}
+.dd li:hover{background:rgba(244,241,239,.07);color:var(--fg)}
+.dd li[aria-selected=true]{color:var(--fg)}.dd li[aria-selected=true]::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.cx-f .dd,.sx-fm .dd{display:block;margin-top:9px}
+.cx-f .dd>button,.sx-fm .dd>button{padding:14px 16px;font:500 14.5px var(--mono);letter-spacing:0;text-transform:none}
+.cx-f .dd li,.sx-fm .dd li{font:500 14px var(--mono);letter-spacing:0;text-transform:none}
+@media(max-width:760px){.cx-co .cx-f,.cx-co .cx-sum{padding:28px 20px}.md .mb{padding:34px 22px}.dd{min-width:0}.sx-fm{padding:24px 18px}}
+/* newsletter */
+body .sx-nl{position:relative;overflow:hidden;border-radius:30px;padding:76px 40px;background:radial-gradient(60% 90% at 100% 100%,rgba(255,90,42,.9),transparent 65%),radial-gradient(45% 70% at 0% 0%,rgba(189,225,246,.3),transparent 62%),linear-gradient(135deg,#e5132b,#8a0b1a 68%,#0a0607)}
+body .sx-nl h2{font-stretch:125%;font-weight:900;letter-spacing:-.03em}
+body .sx-nl form{max-width:540px;gap:6px;padding:6px;border:1px solid rgba(255,255,255,.2);border-radius:18px;background:rgba(10,6,7,.38)}
+body .sx-nl form input{background:transparent!important;color:#fff!important;border-radius:12px;padding:15px 16px;font:500 14.5px var(--mono)}
+body .sx-nl form input::placeholder{color:rgba(255,255,255,.6)}
+body .sx-nl form button,body .sx-nl form button:hover,body .sx-nl form button:active{background:#fff!important;color:#0a0607!important;border-radius:13px!important;padding:0 26px!important;font:800 12px var(--mono)!important;letter-spacing:.1em!important;box-shadow:none!important;transition:background .25s,transform .15s}
+body .sx-nl form button:hover{background:var(--blue)!important}
+body .sx-nl form button:active{transform:scale(.97)}
+body .sx-nl form button::after{display:none}
+@media(max-width:860px){body .sx-nl{padding:48px 20px}.sx-nl form button{padding:15px 26px!important}}
+/* ===== v12 : fiche produit compacte, sans barre de défilement ===== */
+body .sx-md .sx-mb,body .sx-md .sx-mi,body .cx-co .cx-cb,body .md .mb,.dd ul,.cx-items{scrollbar-width:none;-ms-overflow-style:none}
+body .sx-md .sx-mb::-webkit-scrollbar,body .sx-md .sx-mi::-webkit-scrollbar,body .cx-co .cx-cb::-webkit-scrollbar,body .md .mb::-webkit-scrollbar,.dd ul::-webkit-scrollbar,.cx-items::-webkit-scrollbar{display:none;width:0;height:0}
+body .sx-md .sx-mb{border-radius:28px;border:1px solid #2a1c20;background:#0e0809;max-height:95vh}
+body .sx-md .sx-mi{padding:30px 32px 26px}
+body .sx-md .sx-mi h2{font-size:28px;margin:4px 0 6px}
+body .sx-md .sx-mi table td,body .sx-md .sx-mi table th{padding-top:7px;padding-bottom:7px}
+body .sx-md .sx-buy{margin-top:14px}
+body .sx-md .sx-buy .sx-btn{white-space:nowrap;font-size:12px;letter-spacing:.06em;padding:16px 18px;border-radius:14px;background:var(--acc);color:#fff;justify-content:center}
+body .sx-md .sx-buy .sx-btn::after{display:none}
+body .sx-md .sx-buy .sx-btn:hover{letter-spacing:.06em;background:#ff2a42;color:#fff}
+body .sx-md .sx-qty{border-radius:14px;border-color:#2a1c20}
+body .sx-md .sx-mb>button.x{background:rgba(244,241,239,.08);color:var(--fg);box-shadow:none}
+@media(max-width:860px){body .sx-md .sx-mi{padding:24px 20px}}
+/* ===== v13 : photos produit homogènes (fond studio gris clair) ===== */
+.sx-pi.cl{object-fit:contain;padding:3%}
+.card .ph,.cx-th,.sx-sri .th,.lk .hp{background:#e8e8eb}
+.sx-md .sx-ma .sx-pi.cl{padding:6%}
+.card .ph .sizes{background:#0e0809}
+svg:has(~ .sx-pi.cl.ok){visibility:hidden}
+.ph.bf::before{content:"";position:absolute;inset:-30px;background:var(--bgimg) center/cover;filter:blur(26px);z-index:0}
+/* v16 : photo entière, fond assorti */
+.ph.bf::before{display:none}
+/* v17 : mobile */
+@media(max-width:860px){body .sx-nl form button,body .sx-nl form button:hover{padding:16px 26px!important;width:100%;justify-content:center}body .sx-nl form{padding:8px}}
+@media(max-width:600px){.bar{gap:10px 16px}.tabs,.chips{width:100%;flex:none;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;gap:22px}.tabs::-webkit-scrollbar,.chips::-webkit-scrollbar{display:none}.bar .dd{flex:1;min-width:0}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="#" class="logo"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M2 10C2 4.5 6.5 2.5 11 5.5c3.5 2.3 6 2.3 9.5-.7C25 1 29 4.500 29 10s-4 8.500-8.500 5.200c-3.500-2.500-6-2.500-9.500.7C6.500 19 2 15.500 2 10z" fill="#e5132b"/></svg>URBANWEAR</a>
+  <nav class="links"><a href="#shop" data-g="h">Homme</a><a href="#shop" data-g="f">Femme</a><a href="#shop" data-g="all">Collection</a><a href="#lookbook">Sélection</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+  <div class="act"><button class="ab" data-search-open aria-label="Rechercher"><i data-ic="search" data-s="16"></i></button><button class="ab" id="favnav" aria-label="Favoris"><i data-ic="heart" data-s="16"></i><span class="lb">Favoris</span> <b id="fc">0</b></button><button class="ab cart" data-cart-open><span class="lb">Panier</span><i data-ic="bag" data-s="16"></i> <b data-cart-count>0</b></button></div>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap">
+  <div>
+    <h1 class="ent" style="--d:.15s">Street<br>code<em>.</em></h1>
+    <p class="lead ent" style="--d:.3s">Coupes oversize, matières épaisses, détails précis. Une collection courte pensée à Casablanca, portée partout au Maroc.</p>
+    <div class="cta ent" style="--d:.42s"><a href="#shop" class="btn">Voir la collection →</a><a href="#lookbook" class="btn o">Sélection</a></div>
+  </div>
+</div></section>
+
+<section class="facts" style="padding:0"><div class="wrap"><div class="fg">
+  <div data-rv><small>Note moyenne</small><b><span data-count data-fill="avg">4.7</span><i>/5</i></b></div>
+  <div data-rv><small>Avis clients</small><b data-count data-fill="total">54</b></div>
+  <div data-rv><small>Pièces</small><b data-count data-fill="n">12</b></div>
+  <div data-rv><small>Livraison</small><b><span data-count>48</span><i>h</i></b></div>
+</div></div></section>
+
+<section id="shop"><div class="wrap">
+  <div class="sh" data-rv><div><span class="kick">Collection</span><h2>Toute la<br>collection</h2></div><button class="link" onclick="openSG()"><i data-ic="ruler" data-s="14"></i> Guide des tailles</button></div>
+  <div class="bar">
+    <div class="tabs" id="seg"><button class="on" data-g="all">Tout</button><button data-g="h">Homme</button><button data-g="f">Femme</button></div>
+    <div class="chips" id="chips"></div>
+    <select id="sz"><option value="">Taille : toutes</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+    <select id="so"><option value="">Tri : pertinence</option><option value="a">Prix croissant</option><option value="d">Prix décroissant</option><option value="r">Mieux notés</option></select>
+    <button class="fav" id="favf">♡ Favoris</button>
+  </div>
+  <div class="cnt" id="cnt"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="lookbook" style="padding-top:20px"><div class="wrap">
+  <div class="sh" data-rv><div><span class="kick">Sélection</span><h2>À ne pas manquer</h2></div><p style="color:var(--mut);margin:0;max-width:320px">Trois pièces de la collection, ajout en un clic (taille M par défaut).</p></div>
+  <div class="look" id="look"></div>
+</div></section>
+
+<div class="big">URBANWEAR</div>
+<footer><div class="wrap"><span>© 2026 UrbanWear</span><span>Casablanca, Maroc</span></div></footer>
+
+<div class="md" id="md"><div class="mb" id="mb"></div></div>
+<script src="assets/cart.js"></script>
+<script src="assets/shop.js"></script>
+<script>
+Cart.init({site:'urbanwear',freeShip:500,shipFee:35,cur:'DH',codes:{URBAN15:{t:'pct',v:15,d:'-15% sur toute la commande'},STREET50:{t:'fix',v:50,d:'-50 DH offerts'},FREESHIP:{t:'ship',d:'Livraison offerte'}}});
+const $=(s,r=document)=>r.querySelector(s),fmt=n=>Cart.fmt(n);
+document.querySelectorAll('[data-ic]').forEach(e=>{e.style.display='inline-flex';e.innerHTML=Shop.icon(e.dataset.ic,+e.dataset.s||20)});
+/* ---- illustrations de secours (affichées tant qu'une photo manque) ---- */
+function G(t,c,logo){
+  const dk='rgba(0,0,0,.22)',lt='rgba(255,255,255,.16)',lg=logo||'#fff';
+  const L=(x,y,s=12)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="800" font-size="${s}" fill="${lg}" opacity=".95">UW</text>`;
+  const sh='<ellipse cx="100" cy="188" rx="58" ry="5" fill="#000" opacity=".18"/>';
+  let b='';
+  if(t==='hood')b=`<path d="M58 40 82 28h36l24 12 34 42-6 74-22 4-4-60-8-4v70H58v-70l-8 4-4 60-22-4-6-74z" fill="${c}"/><path d="M80 28q20 34 40 0 6-22-20-24T80 28z" fill="${dk}"/><path d="M84 30q16 22 32 0" fill="none" stroke="${lt}" stroke-width="3"/><path d="M92 50v22M108 50v22" stroke="${lg}" stroke-width="3" stroke-linecap="round" opacity=".8"/><path d="M70 126h60l8 30H62z" fill="${dk}"/>${L(100,100,12)}`;
+  if(t==='crop')b=`<path d="M60 40 84 28h32l24 12 34 36-6 52-20 4-4-30-8-2v36H60v-36l-8 2-4 30-20-4-6-52z" fill="${c}"/><path d="M80 28q20 34 40 0 4-20-20-22T80 28z" fill="${dk}"/><path d="M92 48v20M108 48v20" stroke="${lg}" stroke-width="3" stroke-linecap="round" opacity=".8"/><path d="M72 108h56l6 20H66z" fill="${dk}"/>${L(100,92,11)}`;
+  if(t==='cargo')b=`<path d="M58 14h84l10 168h-40l-12-92-12 92H48z" fill="${c}"/><rect x="58" y="14" width="84" height="12" fill="${dk}"/><rect x="56" y="104" width="22" height="30" rx="2" fill="${dk}"/><rect x="122" y="104" width="22" height="30" rx="2" fill="${dk}"/><path d="M100 26v62" stroke="${dk}" stroke-width="3"/>`;
+  if(t==='wide')b=`<path d="M64 14h72l22 170h-46l-12-100-12 100H42z" fill="${c}"/><rect x="64" y="14" width="72" height="12" fill="${dk}"/><path d="M100 26v58" stroke="${dk}" stroke-width="3"/><path d="M82 44l-16 14M118 44l16 14" stroke="${dk}" stroke-width="3"/>`;
+  if(t==='jacket')b=`<path d="M58 34 84 22l16 16 16-16 26 12 36 38-8 90-20 2-4-62-6 2v64H58v-64l-6-2-4 62-20-2-8-90z" fill="${c}"/><path d="M84 22l16 22 16-22-8-6h-16z" fill="${dk}"/><path d="M100 44v132" stroke="${dk}" stroke-width="3"/><rect x="68" y="118" width="22" height="3" fill="${dk}"/><rect x="110" y="118" width="22" height="3" fill="${dk}"/>${L(80,80,8)}`;
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">${sh}${b}</svg>`;
+}
+/* ---- catalogue : chaque produit correspond à sa photo ; notes et nombres d'avis calculés à partir des avis ---- */
+const SZ=['S','M','L','XL','XXL'],SZF=['XS','S','M','L','XL'];
+const P=[
+{id:'u1',n:"Hoodie Oversize Charbon",d:"Hoodie à capuche profonde et épaules tombantes, en molleton épais gris anthracite. Bord-côte côtelé et poche kangourou.",g:'h',cat:'Hoodies',p:399,t:'hood',tag:'Hot',mat:'Molleton de coton épais',cut:'Oversize',col:[["Charbon",'#3a3b3e']],sz:SZ,rev:[
+['Yassine B.',5,'Le coton est épais et la coupe oversize est exactement celle que je cherchais. Pris en M, je mesure 1m78.','Casablanca','9 oct. 2026'],
+['Anas R.',5,'Capuche bien structurée, rien à dire sur la finition.','Rabat','1 oct. 2026'],
+['Omar T.',4,'Super hoodie, je recommande de prendre une taille au-dessus pour un fit très oversize.','Marrakech','24 sept. 2026'],
+['Mehdi E.',5,'Il tient chaud sans être lourd. Livraison en 48 h.','Tanger','15 sept. 2026'],
+['Ilyas K.',5,'Le gris anthracite ne ternit pas après plusieurs lavages.','Fès','5 sept. 2026'],
+['Hamza D.',4,'Très bon rapport qualité/prix, manches un peu longues pour moi.','Casablanca','28 août 2026']]},
+{id:'u2',n:"Hoodie Heavy Noir",d:"Molleton lourd gratté à l’intérieur, capuche à cordon et poche kangourou. Coupe boxy, courte et carrée.",g:'h',cat:'Hoodies',p:349,t:'hood',mat:'Molleton de coton épais',cut:'Boxy',col:[["Noir",'#1c1c20']],sz:SZ,rev:[
+['Reda M.',5,'Vraiment lourd, on sent la qualité. Parfait pour l’hiver.','Casablanca','12 oct. 2026'],
+['Adam S.',4,'Bonne coupe boxy, la poche kangourou est profonde.','Agadir','3 oct. 2026'],
+['Soufiane A.',5,'Le meilleur noir basique que j’ai acheté.','Rabat','20 sept. 2026'],
+['Bilal H.',5,'Taille conforme au guide.','Meknès','10 sept. 2026'],
+['Zakaria L.',4,'Très bien, un peu rigide au début puis il s’assouplit.','Oujda','31 août 2026']]},
+{id:'u3',n:"Hoodie Color-Block Marron",d:"Hoodie marron à bandes beiges sur les manches et petit motif brodé sur la poitrine. Coupe oversize.",g:'h',cat:'Hoodies',p:449,t:'hood',tag:'Nouveau',mat:'Molleton de coton épais',cut:'Oversize',col:[["Marron",'#5b3a2c']],sz:SZ,rev:[
+['Ayoub N.',5,'Les bandes beige sur le marron, ça claque. Compliments à chaque sortie.','Casablanca','14 oct. 2026'],
+['Karim B.',5,'Coupe boxy très stylée.','Marrakech','6 oct. 2026'],
+['Walid F.',4,'Belle pièce, le marron est plus foncé que sur certaines photos.','Rabat','22 sept. 2026'],
+['Imad Z.',5,'Qualité au top pour le prix.','Tétouan','13 sept. 2026'],
+['Nabil O.',5,'Je l’ai pris pour un cadeau, il a adoré.','Casablanca','2 sept. 2026']]},
+{id:'u4',n:"Zip Hoodie Panneaux Noir et Gris",d:"Veste zippée à capuche, panneaux gris contrastés sur le torse et les manches. Zip métal, coupe oversize.",g:'h',cat:'Vestes',p:549,old:649,t:'jacket',mat:'Molleton de coton épais',cut:'Oversize',col:[["Noir / Gris",'#1c1c20']],sz:SZ,rev:[
+['Hicham G.',5,'Le zip est solide et les empiècements gris donnent du relief à la pièce.','Casablanca','11 oct. 2026'],
+['Othmane J.',5,'Veste confortable, coupe ample comme annoncé.','Rabat','30 sept. 2026'],
+['Younes C.',5,'Elle fait vraiment la différence dans une tenue.','Fès','19 sept. 2026'],
+['Saad Q.',4,'Très bien, j’aurais aimé une poche intérieure.','Casablanca','8 sept. 2026'],
+['Marouane W.',5,'Livraison rapide, emballage soigné.','Agadir','27 août 2026']]},
+{id:'u5',n:"Zip Hoodie Noir Doublure Bleue",d:"Zip hoodie court et carré, noir à passepoils bleus, avec doublure de capuche bleu électrique.",g:'h',cat:'Vestes',p:479,t:'jacket',mat:'Molleton avec doublure contrastée',cut:'Courte et carrée',col:[["Noir",'#1c1c20']],sz:SZ,rev:[
+['Rayan P.',5,'La doublure bleue est une belle surprise quand on ouvre le zip.','Casablanca','9 oct. 2026'],
+['Idriss V.',4,'Coupe courte et carrée, à prendre une taille au-dessus.','Rabat','28 sept. 2026'],
+['Mourad Y.',5,'Très bonne finition des coutures.','Marrakech','17 sept. 2026'],
+['Tarik U.',4,'Beau produit, tissu un peu fin pour le plein hiver.','Tanger','4 sept. 2026']]},
+{id:'u6',n:"Zip Hoodie Cropped Gris",d:"Version courte du zip hoodie en gris chiné, avec doublure de capuche et passepoils bleu électrique.",g:'f',cat:'Hoodies',p:379,t:'crop',tag:'Hot',mat:'Molleton avec doublure contrastée',cut:'Courte et ample',col:[["Gris chiné",'#8b8d94']],sz:SZF,rev:[
+['Salma B.',5,'Court, ample, parfait avec un pantalon taille haute. Pris en M.','Casablanca','13 oct. 2026'],
+['Imane K.',5,'Le gris est joli et la doublure bleue ressort bien.','Rabat','2 oct. 2026'],
+['Yasmine A.',4,'Magnifique, mais il taille petit au niveau des épaules.','Marrakech','21 sept. 2026'],
+['Nadia R.',5,'Très confortable, je le porte tous les jours.','Fès','11 sept. 2026'],
+['Hajar M.',5,'La qualité du zip est très bonne.','Tanger','1 sept. 2026']]},
+{id:'u7',n:"Hoodie Zip Asymétrique Gris",d:"Fermeture asymétrique en diagonale et col montant. Gris chiné, coupe oversize.",g:'f',cat:'Hoodies',p:429,t:'hood',mat:'Molleton de coton épais',cut:'Oversize, zip asymétrique',col:[["Gris chiné",'#a4a6ad']],sz:SZF,rev:[
+['Kenza L.',5,'Zip asymétrique original, personne n’a la même pièce.','Casablanca','10 oct. 2026'],
+['Sara E.',4,'Coupe oversize, j’ai pris ma taille habituelle et c’est parfait.','Rabat','29 sept. 2026'],
+['Meryem T.',5,'Le col montant est très confortable.','Agadir','16 sept. 2026'],
+['Laila B.',5,'Beau gris chiné, pas du tout bouloché après lavage.','Casablanca','3 sept. 2026']]},
+{id:'u8',n:"Hoodie Color-Block Noir et Gris",d:"Hoodie boxy à empiècements gris sur fond noir, poche kangourou et motif imprimé sur la poitrine.",g:'h',cat:'Hoodies',p:429,t:'hood',mat:'Molleton de coton épais',cut:'Boxy',col:[["Noir / Gris",'#5f6168']],sz:SZ,rev:[
+['Anouar D.',5,'Le contraste graphite/noir est élégant et discret.','Casablanca','12 oct. 2026'],
+['Fouad R.',5,'Coupe parfaite, matière douce à l’intérieur.','Rabat','1 oct. 2026'],
+['Taha M.',4,'Beau hoodie, taille un peu grand.','Marrakech','18 sept. 2026'],
+['Ismail H.',5,'Je recommande, finitions propres.','Fès','7 sept. 2026'],
+['Amine K.',4,'Bon rapport qualité/prix.','Casablanca','26 août 2026']]},
+{id:'u9',n:"Pantalon Cargo Wide Noir",d:"Pantalon très large à taille élastique avec cordon, poche latérale et jambe droite. Noir.",g:'h',cat:'Pantalons',p:429,t:'cargo',mat:'Coton épais',cut:'Large',col:[["Noir",'#1c1c20']],sz:SZ,rev:[
+['Badr A.',5,'Coupe large, poches pratiques, tombe bien sur des sneakers.','Casablanca','11 oct. 2026'],
+['Oussama L.',5,'Taille élastique confortable, je l’ai pris en L et c’est parfait.','Rabat','2 oct. 2026'],
+['Hassan B.',4,'Un peu long pour 1m70, un ourlet suffit.','Fès','23 sept. 2026'],
+['Chakib N.',5,'Tissu épais qui tombe bien.','Marrakech','12 sept. 2026'],
+['Redouane T.',5,'Mon pantalon préféré de la collection.','Tanger','3 sept. 2026'],
+['Soulaiman G.',4,'Très bien mais la couleur est plus foncée que sur certaines photos.','Casablanca','25 août 2026']]},
+{id:'u10',n:"Jogger Wide Gris Chiné",d:"Jogger large à taille élastique avec cordon et bas élastiqué. Molleton doux, gris chiné.",g:'f',cat:'Pantalons',p:349,t:'wide',mat:'Coton épais',cut:'Large',col:[["Gris chiné",'#a4a6ad']],sz:SZF,rev:[
+['Ghita S.',5,'Confortable et large, parfait pour tous les jours.','Casablanca','13 oct. 2026'],
+['Rim A.',5,'Le gris chiné est très joli, matière douce.','Rabat','4 oct. 2026'],
+['Btissam F.',4,'Très bon jogger, il taille un peu grand.','Tétouan','20 sept. 2026'],
+['Oumaima K.',5,'Je l’ai déjà racheté en deuxième exemplaire.','Kénitra','9 sept. 2026'],
+['Hind Z.',4,'Bien, le cordon est un peu court.','Casablanca','30 août 2026']]},
+{id:'u11',n:"Jean Baggy Sable Délavé",d:"Jean baggy taille haute à effet délavé sable, petit patch cousu à la taille. Denim épais.",g:'f',cat:'Pantalons',p:399,t:'wide',tag:'Nouveau',mat:'Denim épais délavé',cut:'Baggy, taille haute',col:[["Sable délavé",'#b9b48f']],sz:SZF,rev:[
+['Lina O.',5,'Le délavage est très réussi, coupe baggy parfaite.','Casablanca','12 oct. 2026'],
+['Chaima T.',4,'Beau jean, un peu long, je l’ai fait raccourcir.','Rabat','1 oct. 2026'],
+['Najat M.',5,'Taille haute confortable, la couleur est super.','Agadir','19 sept. 2026'],
+['Wafae R.',5,'Denim épais et résistant.','Tanger','8 sept. 2026'],
+['Samira C.',4,'Très joli, taille large comme décrit.','Meknès','28 août 2026']]},
+{id:'u12',n:"Jean Baggy Noir Délavé",d:"Jean baggy noir à effet usé sur les cuisses, jambe très large. Denim épais.",g:'h',cat:'Pantalons',p:419,t:'wide',mat:'Denim épais délavé',cut:'Baggy',col:[["Noir délavé",'#3a3d44']],sz:SZ,rev:[
+['Mohcine E.',5,'Noir délavé très stylé, il tombe parfaitement.','Casablanca','10 oct. 2026'],
+['Driss P.',5,'Coupe ample, matière solide.','Marrakech','27 sept. 2026'],
+['Said O.',4,'Un peu rigide au début, il s’assouplit avec les lavages.','Fès','15 sept. 2026'],
+['Yahya V.',4,'Bien pour le prix, longueur à vérifier.','Rabat','2 sept. 2026'],
+['Nizar K.',5,'Je l’ai pris avec le hoodie Oversize Charbon, combo parfait.','Casablanca','24 août 2026']]},
+{id:'u13',n:"Zip Hoodie Sauge",d:"Zip hoodie vert sauge à double curseur et capuche ample. Molleton épais, coupe oversize.",g:'h',cat:'Vestes',p:479,t:'hood',mat:"Molleton de coton épais",cut:"Oversize, double zip",col:[["Sauge",'#6f9a94']],sz:SZ,rev:[
+["Hamid R.",5,"La couleur sauge est superbe en vrai, et le double zip est pratique.","Casablanca","12 oct. 2026"],
+["Zouhair M.",5,"Matière épaisse, coupe ample. Pris en L, parfait.","Rabat","3 oct. 2026"],
+["Abdel B.",4,"Très beau, il faut le laver à froid pour garder la couleur.","Fès","21 sept. 2026"],
+["Yousra K.",5,"Je l’ai pris pour moi, il est mixte et très confortable.","Marrakech","9 sept. 2026"]]},
+{id:'u14',n:"Hoodie Washed Indigo",d:"Hoodie boxy à effet délavé en dégradé bleu indigo. Chaque pièce présente de légères variations de teinte.",g:'h',cat:'Hoodies',p:459,t:'hood',tag:'Nouveau',mat:"Molleton délavé",cut:"Boxy",col:[["Indigo délavé",'#5b7aa8']],sz:SZ,rev:[
+["Soufiane L.",5,"L’effet délavé est très réussi, chaque pièce a un rendu différent.","Casablanca","13 oct. 2026"],
+["Reda T.",5,"Coupe boxy courte, exactement ce que je cherchais.","Tanger","4 oct. 2026"],
+["Imad H.",4,"Beau bleu, un peu plus clair que sur la photo.","Rabat","24 sept. 2026"],
+["Ali Z.",5,"Tissu doux, finition propre.","Agadir","10 sept. 2026"],
+["Mounir D.",5,"Mon préféré de la collection.","Casablanca","30 août 2026"]]},
+{id:'u15',n:"Pantalon Wide Navy",d:"Pantalon très large bleu marine, taille élastique et jambe droite. Coton épais.",g:'h',cat:'Pantalons',p:389,t:'wide',mat:"Coton épais",cut:"Large",col:[["Navy",'#1d2a4d']],sz:SZ,rev:[
+["Karim S.",5,"Très ample, tombe droit, le navy est profond.","Casablanca","11 oct. 2026"],
+["Nabil A.",4,"Bien, un peu long pour 1m70.","Meknès","1 oct. 2026"],
+["Othmane F.",5,"Le tissu est lourd et ne se froisse pas.","Rabat","18 sept. 2026"],
+["Zakaria N.",5,"Parfait avec un hoodie noir.","Oujda","5 sept. 2026"]]},
+{id:'u16',n:"Jogger Navy Cordon",d:"Jogger bleu marine à fines bandes latérales, bas à cordon ajustable. Coupe ballon.",g:'f',cat:'Pantalons',p:369,t:'wide',mat:"Coton épais",cut:"Large, bas à cordon",col:[["Navy",'#1d2a4d']],sz:SZF,rev:[
+["Salma R.",5,"Les bandes sur le côté et le cordon en bas, j’adore.","Casablanca","12 oct. 2026"],
+["Hiba M.",5,"Très confortable, taille élastique douce.","Rabat","2 oct. 2026"],
+["Nour E.",4,"Joli modèle, il taille un peu grand.","Marrakech","19 sept. 2026"],
+["Lamia B.",5,"Je l’ai déjà racheté en noir.","Fès","8 sept. 2026"]]},
+{id:'u17',n:"Jogger Slate Basic",d:"Jogger bleu ardoise avec petit motif brodé sur la cuisse et bas élastiqué.",g:'h',cat:'Pantalons',p:329,t:'wide',mat:"Molleton de coton",cut:"Droit, bas élastique",col:[["Ardoise",'#3b4458']],sz:SZ,rev:[
+["Anas O.",5,"Un jogger simple, doux et solide. Prix correct.","Casablanca","9 oct. 2026"],
+["Yassir G.",4,"Bon basique, la couleur est un bleu gris foncé.","Tétouan","29 sept. 2026"],
+["Walid C.",5,"Très confortable pour tous les jours.","Rabat","15 sept. 2026"],
+["Hatim P.",5,"Bonne coupe, pas de bouloches après lavage.","Casablanca","2 sept. 2026"]]},
+{id:'u18',n:"Pantalon Parachute Noir",d:"Pantalon ballon en nylon léger, taille élastique et chevilles ajustables. Noir.",g:'h',cat:'Pantalons',p:429,t:'wide',mat:"Nylon léger",cut:"Ballon, chevilles ajustables",col:[["Noir",'#16161a']],sz:SZ,rev:[
+["Ilyas D.",5,"Coupe ballon originale, très léger.","Casablanca","10 oct. 2026"],
+["Marouane Q.",5,"Les chevilles ajustables sont pratiques.","Rabat","30 sept. 2026"],
+["Saad V.",4,"Le tissu fait un peu de bruit, mais très stylé.","Fès","16 sept. 2026"],
+["Tarik Y.",5,"Idéal pour l’été comme pour la mi-saison.","Agadir","4 sept. 2026"]]},
+{id:'u19',n:"Pantalon Wide Anthracite",d:"Pantalon large en molleton gris anthracite, taille élastique et poche latérale.",g:'h',cat:'Pantalons',p:359,t:'wide',mat:'Molleton de coton épais',cut:'Large',col:[["Anthracite",'#4a4a4d']],sz:SZ,rev:[
+["Badr K.",5,"Très large et très doux à l’intérieur.","Casablanca","13 oct. 2026"],
+["Oussama T.",5,"Le gris anthracite va avec tout.","Marrakech","3 oct. 2026"],
+["Hassan L.",4,"Bien, taille un peu grand.","Rabat","22 sept. 2026"],
+["Chakib R.",5,"Bonne qualité pour le prix.","Tanger","7 sept. 2026"]]},
+{id:'u20',n:"Pantalon Wide Gris Délavé",d:"Pantalon large gris délavé, taille à cordon et poches latérales. Molleton doux.",g:'f',cat:'Pantalons',p:389,t:'wide',mat:"Molleton délavé",cut:"Large, cordon",col:[["Gris délavé",'#6b6d72']],sz:SZF,rev:[
+["Ghita A.",5,"Le délavé est très beau, coupe large et fluide.","Casablanca","12 oct. 2026"],
+["Rim S.",5,"Parfait avec un crop top.","Rabat","1 oct. 2026"],
+["Imane Z.",4,"Joli, le cordon est un peu long.","Fès","20 sept. 2026"],
+["Btissam N.",5,"Très confortable.","Kénitra","6 sept. 2026"]]},
+{id:'u21',n:"Casquette Noire",d:"Casquette six panneaux en coton brossé noir, sangle réglable à l’arrière.",g:'u',cat:'Casquettes',p:149,t:'hood',mat:"Coton brossé",cut:"Six panneaux, sangle réglable",col:[["Noir",'#16161a']],sz:['Unique'],rev:[
+["Younes B.",5,"Simple, bien structurée, la sangle est réglable.","Casablanca","11 oct. 2026"],
+["Meryem H.",5,"Je la porte tous les jours.","Rabat","28 sept. 2026"],
+["Adam J.",4,"Bonne casquette, la visière est un peu courbée.","Marrakech","14 sept. 2026"],
+["Nadia F.",5,"Très bon rapport qualité prix.","Tanger","31 août 2026"]]},
+{id:'u22',n:"Casquette Denim Usé",d:"Casquette en denim bleu délavé, visière effilochée et coutures contrastées.",g:'u',cat:'Casquettes',p:169,t:'hood',tag:'Nouveau',mat:"Denim délavé",cut:"Visière effilochée",col:[["Bleu délavé",'#8fa7b8']],sz:['Unique'],rev:[
+["Hamza E.",5,"Le denim effiloché donne beaucoup de caractère.","Casablanca","13 oct. 2026"],
+["Lina O.",5,"Je l’ai prise pour l’été, elle est légère.","Agadir","5 oct. 2026"],
+["Ayoub W.",4,"Belle pièce, les coutures sont bien faites.","Rabat","23 sept. 2026"],
+["Wafae R.",5,"Elle va avec tout.","Casablanca","12 sept. 2026"]]}
+];
+const SC=new Set(['u1','u3','u4','u5','u6','u8','u13','u14']);
+const ORD=['u2','u15','u10','u16','u9','u17','u12','u18','u11','u19','u7','u20','u21','u22','u1','u3','u5','u6','u8','u13','u14','u4'];
+P.sort((a,b)=>ORD.indexOf(a.id)-ORD.indexOf(b.id));
+P.forEach(p=>{p.rc=p.rev.length;p.r=(p.rev.reduce((a,r)=>a+r[1],0)/p.rc).toFixed(1);if(p.old&&!p.tag)p.tag='-'+Math.round((1-p.p/p.old)*100)+'%'});
+const TOTAL=P.reduce((a,p)=>a+p.rc,0),AVG=P.reduce((a,p)=>a+p.rev.reduce((b,r)=>b+r[1],0),0)/TOTAL;
+P.reduce((a,b)=>b.rc>a.rc?b:a).tag='Bestseller';
+const STATS={avg:AVG.toFixed(1),total:String(TOTAL),n:String(P.length)};
+document.querySelectorAll('[data-fill]').forEach(e=>e.textContent=STATS[e.dataset.fill]);
+const sel={};P.forEach(p=>sel[p.id]=0);
+const art=(p,i=sel[p.id])=>{const c=p.col[i][1];return G(p.t,c,/(#e|#f|#d9|#b9|#c9)/i.test(c)?'#0b0b0c':'#fff')};
+const byId=id=>P.find(p=>p.id===id);
+/* le fond de la carte prend la couleur des bords de la photo : aucun cadre visible */
+function bgFit(i){try{const c=document.createElement('canvas');c.width=c.height=40;const x=c.getContext('2d');x.drawImage(i,0,0,40,40);const d=[[1,1],[38,1],[20,1],[10,1],[30,1]].map(p=>x.getImageData(p[0],p[1],1,1).data);const m=k=>{const v=d.map(p=>p[k]).sort((a,b)=>a-b);return v[v.length>>1]};const t=i.closest('.ph,.sx-ma,.cx-th,.hp,.th');if(t){t.style.background='rgb('+m(0)+','+m(1)+','+m(2)+')';if(t.classList.contains('ph')&&!document.documentElement.classList.contains('lite')){t.style.setProperty('--bgimg','url("'+i.src+'")');t.classList.add('bf')}}}catch(e){}}
+const IMG=p=>Shop.img(p.n).replace('class="sx-pi"','class="sx-pi'+(SC.has(p.id)?'':' cl')+'"').replace("onload=\"this.classList.add('ok')\"",SC.has(p.id)?"onload=\"this.classList.add('ok')\"":"onload=\"this.classList.add('ok');bgFit(this)\"");
+const artI=(p,i)=>art(p,i)+IMG(p);
+const STAR=Shop.icon('star',11),pad=n=>String(n).padStart(2,'0');
+/* ---- accueil : planche de trois pièces ---- */
+/* ---- filtres ---- */
+let gen='all',cat='Tout',size='',sort='',onlyFav=false,fav=new Set();
+try{fav=new Set(JSON.parse(localStorage.getItem('uw-fav')||'[]'))}catch(e){}
+const cats=['Tout',...new Set(P.map(p=>p.cat))];
+$('#chips').innerHTML=cats.map(c=>`<button class="${c===cat?'on':''}">${c}</button>`).join('');
+$('#chips').onclick=e=>{const b=e.target.closest('button');if(!b)return;cat=b.textContent;[...$('#chips').children].forEach(x=>x.classList.toggle('on',x===b));draw()};
+function setGen(g){gen=g;[...$('#seg').children].forEach(x=>x.classList.toggle('on',x.dataset.g===g));draw()}
+$('#seg').onclick=e=>{const b=e.target.closest('button');if(b)setGen(b.dataset.g)};
+document.querySelectorAll('.links a[data-g]').forEach(a=>a.addEventListener('click',()=>setGen(a.dataset.g)));
+$('#sz').onchange=e=>{size=e.target.value;draw()};$('#so').onchange=e=>{sort=e.target.value;draw()};
+function setFavFilter(v){onlyFav=v;$('#favf').classList.toggle('on',v);draw()}
+$('#favf').onclick=()=>setFavFilter(!onlyFav);
+$('#favnav').onclick=()=>{location.hash='#shop';setFavFilter(true)};
+const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>';
+function draw(){
+  let l=P.filter(p=>(gen==='all'||p.g===gen||p.g==='u')&&(cat==='Tout'||p.cat===cat)&&(!size||p.sz.includes(size))&&(!onlyFav||fav.has(p.id)));
+  if(sort)l=[...l].sort((a,b)=>sort==='a'?a.p-b.p:sort==='d'?b.p-a.p:b.r-a.r||b.rc-a.rc);
+  $('#cnt').textContent=l.length+' pièce'+(l.length>1?'s':'');
+  $('#fc').textContent=fav.size;
+  $('#grid').innerHTML=l.length?l.map((p,i)=>`<article class="card" data-id="${p.id}" data-rv><div class="ph">${p.tag?`<span class="tag ${p.tag==='Hot'||p.tag==='Bestseller'?'hot':''}">${p.tag}</span>`:''}<button class="heart ${fav.has(p.id)?'on':''}" data-fav="${p.id}" aria-label="Favori">${heart}</button><span data-art style="display:contents">${artI(p)}</span>
+  <div class="sizes"><p>Ajout rapide — taille</p><div>${p.sz.map(s=>`<button data-sz="${s}">${s}</button>`).join('')}</div></div></div>
+  <div class="inf"><div class="r1"><span class="ix">${pad(i+1)}</span><h3>${p.n}</h3></div><div class="r2"><span><b style="font-weight:500">${fmt(p.p)}</b>${p.old?`<s>${fmt(p.old)}</s>`:''}</span><span class="rt">${STAR} ${p.r} (${p.rc})</span></div>
+  <div class="dots" style="${p.col.length<2?'display:none':''}">${p.col.map((c,k)=>`<i data-c="${k}" class="${k===sel[p.id]?'on':''}" style="background:${c[1]}" title="${c[0]}"></i>`).join('')}</div></div></article>`).join(''):'<div class="empty">Aucune pièce ne correspond à vos filtres.</div>';
+  Shop.reveal($('#grid'));
+}
+draw();
+$('#grid').onclick=e=>{
+  const card=e.target.closest('.card');if(!card)return;const p=byId(card.dataset.id);
+  const h=e.target.closest('[data-fav]');
+  if(h){fav.has(p.id)?fav.delete(p.id):fav.add(p.id);try{localStorage.setItem('uw-fav',JSON.stringify([...fav]))}catch(x){};$('#fc').textContent=fav.size;h.classList.toggle('on');if(onlyFav)draw();Cart.toast(fav.has(p.id)?'Ajouté aux favoris':'Retiré des favoris');return}
+  const s=e.target.closest('[data-sz]');
+  if(s){Cart.add({key:p.id+p.col[sel[p.id]][0]+s.dataset.sz,name:p.n,variant:p.col[sel[p.id]][0]+' · Taille '+s.dataset.sz,price:p.p,art:artI(p)});return}
+  const d=e.target.closest('[data-c]');
+  if(!d)return openDetail(p);
+  sel[p.id]=+d.dataset.c;card.querySelector('[data-art]').innerHTML=artI(p);card.querySelectorAll('.dots i').forEach((x,i)=>x.classList.toggle('on',i===sel[p.id]));
+};
+/* ---- lookbook ---- */
+const LOOKS=[{ids:['u2']},{ids:['u7']},{ids:['u12']}];
+LOOKS.forEach(l=>{const p=byId(l.ids[0]);l.n=p.n;l.d=p.cat});
+$('#look').innerHTML=LOOKS.map((l,i)=>`<div class="lk" data-rv><div class="pair">${l.ids.map(id=>`<div class="hp">${IMG(byId(id))}</div>`).join('')}</div><div class="t"><div><h3>${l.n}</h3><p>${pad(i+1)} · ${l.d} · <b>${fmt(l.ids.reduce((t,id)=>t+byId(id).p,0))}</b></p></div><button class="btn" data-look="${i}">Ajouter</button></div></div>`).join('');
+$('#look').onclick=e=>{const b=e.target.closest('[data-look]');if(!b)return;LOOKS[b.dataset.look].ids.forEach(id=>{const p=byId(id),s=p.sz.includes('M')?'M':p.sz[0];Cart.add({key:p.id+p.col[0][0]+s,name:p.n,variant:p.col[0][0]+' · Taille '+s,price:p.p,art:art(p,0)})});Cart.open()};
+/* ---- guide des tailles ---- */
+function openSG(){
+  $('#mb').innerHTML=`<button class="x" onclick="closeSG()" aria-label="Fermer">✕</button><h2>Guide des tailles</h2><p style="color:var(--mut);margin:8px 0 0">Mesures du corps en cm. Coupe oversize : prenez votre taille habituelle.</p>
+  <table><tr><th>Taille</th><th>Poitrine</th><th>Taille</th><th>Hanches</th></tr><tr><td>S</td><td>88–92</td><td>74–78</td><td>90–94</td></tr><tr><td>M</td><td>93–98</td><td>79–84</td><td>95–100</td></tr><tr><td>L</td><td>99–104</td><td>85–90</td><td>101–106</td></tr><tr><td>XL</td><td>105–110</td><td>91–96</td><td>107–112</td></tr><tr><td>XXL</td><td>111–118</td><td>97–104</td><td>113–120</td></tr></table>
+  <div class="fd"><div><label>Taille (cm)</label><input id="ht" type="number" value="175"></div><div><label>Poids (kg)</label><input id="wt" type="number" value="70"></div><button class="btn" onclick="findSize()" style="padding:13px 18px">Trouver</button></div><div class="res" id="res"></div>`;
+  $('#md').classList.add('on');findSize();
+}
+function findSize(){
+  const h=+$('#ht').value,w=+$('#wt').value;let i=w<62?0:w<72?1:w<82?2:w<92?3:4;if(h>185)i=Math.min(4,i+1);if(h<165)i=Math.max(0,i-1);
+  $('#res').innerHTML=`Taille conseillée : <b>${SZ[i]}</b> <span style="color:var(--mut)">(entre ${SZ[Math.max(0,i-1)]} et ${SZ[Math.min(4,i+1)]} selon la coupe)</span>`;
+}
+function closeSG(){$('#md').classList.remove('on')}
+$('#md').onclick=e=>{if(e.target.id==='md')closeSG()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSG()});
+/* ---- fiche produit : avis réels du produit ---- */
+function openDetail(p){
+  const opts=[];
+  if(p.col.length>1)opts.push({label:'Couleur',values:p.col.map(c=>({v:c[0],c:c[1]}))});
+  if(p.sz.length>1)opts.push({label:'Taille',values:p.sz,link:'Guide des tailles'});
+  const A=s=>{const c=p.col.find(x=>x[0]===s.Couleur)||p.col[0];return G(p.t,c[1],/(#e|#f|#d9|#b9|#c9)/i.test(c[1])?'#0b0b0c':'#fff')+IMG(p)};
+  Shop.detail({art:A,bg:SC.has(p.id)?'#141416':'#e8e8eb',cat:p.cat+' · '+(p.g==='h'?'Homme':p.g==='f'?'Femme':'Unisexe'),name:p.n,rating:+p.r,rc:p.rc,price:p.p,old:p.old,
+   desc:p.d,options:opts,onLink:()=>{document.querySelector('.sx-md').classList.remove('on');openSG()},
+   specs:[['Référence','UW-'+String(+p.id.slice(1)).padStart(3,'0')],['Matière',p.mat],['Coupe',p.cut],['Couleur',p.col[0][0]],['Livraison','48 h · paiement à la livraison'],['Entretien','Lavage à 30 °C, à l’envers'],['Échange','30 jours, taille gratuite']],
+   reviews:p.rev.map(r=>[r[0]+' · '+r[3]+' · '+r[4],r[1],r[2]]),
+   onAdd:(s,q)=>{const sz=s.Taille||p.sz[0],co=s.Couleur||p.col[0][0];Cart.add({key:p.id+co+sz,name:p.n,variant:co+' · Taille '+sz,price:p.p,qty:q,art:A({Couleur:co})},true)}});
+}
+Shop.search({placeholder:'Rechercher un hoodie, une veste…',items:()=>P.map(p=>({id:p.id,name:p.n,sub:p.cat+' · '+(p.g==='h'?'Homme':p.g==='f'?'Femme':'Unisexe'),price:p.p,art:artI(p,0)})),onPick:id=>openDetail(byId(id))});
+Shop.sections({before:'.big',
+ about:{eye:'À propos',title:'Née dans la rue, pensée pour durer.',text:'UrbanWear est un label streetwear basé à Casablanca. Une collection courte de hoodies, vestes et pantalons : coupes précises, matières épaisses, séries limitées.',points:[['scissors','Design local','Dessiné à Casablanca, produit en petites séries.'],['thread','Matières épaisses','Molleton, coton et denim choisis pour durer.'],['return','Échanges faciles','Taille gratuite sous 30 jours.']],stats:[[STATS.total,'avis clients'],[STATS.n,'pièces'],['48 h','livraison'],['30 j','échange de taille']]},
+ reviews:{title:'Ce que dit la rue',score:STATS.avg,count:STATS.total+' avis clients',items:['u1','u6','u9'].map(id=>{const p=byId(id),r=p.rev.find(x=>x[1]===5);return [r[0],5,r[2],r[3]+' · '+p.n,r[4]]})},
+ contact:{title:'Une question sur une pièce ?',text:'Écrivez-nous, nous répondons en moins de 24 h.',info:[['mail','Support client','hello@urbanwear.ma'],['pin','Showroom','Maârif, Casablanca'],['clock','Horaires','Lun–Sam · 10h–20h'],['truck','Livraison','48 h partout au Maroc, paiement à la livraison']],topics:['Taille / fit','Suivi de commande','Échange','Collaboration']},
+ newsletter:{title:'Reste dans le drop.',text:'Accès anticipé aux nouvelles pièces + -15% sur ta première commande.',code:'URBAN15'}});
+Shop.reveal();
+</script>
+<script>(function(){var h=document.querySelector(".top"),t=0;function u(){h.classList.toggle("sc",scrollY>40);t=0}addEventListener("scroll",function(){if(!t){t=1;requestAnimationFrame(u)}},{passive:true});u()})()</script>
+<script>(function(){
+var CH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+function enh(sel){if(sel.dataset.dd)return;sel.dataset.dd=1;sel.classList.add('dd-n');
+var w=document.createElement('div');w.className='dd';w.innerHTML='<button type="button" aria-haspopup="listbox" aria-expanded="false"><span></span>'+CH+'</button><ul role="listbox"></ul>';sel.after(w);
+var b=w.firstChild,t=b.firstChild,ul=w.lastChild;
+function draw(){var o=sel.options[sel.selectedIndex];t.textContent=o?o.text:'';ul.innerHTML=[].map.call(sel.options,function(o,i){return '<li role="option" data-i="'+i+'" aria-selected="'+(i===sel.selectedIndex)+'">'+o.text+'</li>'}).join('')}
+draw();
+function close(){w.classList.remove('on','up');b.setAttribute('aria-expanded','false')}
+b.onclick=function(e){e.preventDefault();var open=!w.classList.contains('on');document.querySelectorAll('.dd.on').forEach(function(x){x.classList.remove('on')});
+if(open){var c=b.closest('.cx-cb'),bot=Math.min(innerHeight,c?c.getBoundingClientRect().bottom:innerHeight);w.classList.toggle('up',bot-b.getBoundingClientRect().bottom<250);w.classList.add('on');b.setAttribute('aria-expanded','true');var s=ul.querySelector('[aria-selected=true]');if(s)s.scrollIntoView({block:'nearest'})}};
+ul.onclick=function(e){var li=e.target.closest('li');if(!li)return;e.preventDefault();e.stopPropagation();sel.selectedIndex=+li.dataset.i;sel.dispatchEvent(new Event('change',{bubbles:true}));draw();close()};
+sel.addEventListener('change',draw)}
+document.addEventListener('click',function(e){if(!e.target.closest('.dd'))document.querySelectorAll('.dd.on').forEach(function(x){x.classList.remove('on')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.dd.on').forEach(function(x){x.classList.remove('on')})});
+function scan(r){if(r.querySelectorAll)r.querySelectorAll('select').forEach(enh)}
+scan(document);
+new MutationObserver(function(m){m.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.tagName==='SELECT')enh(n);else scan(n)}})})}).observe(document.body,{childList:true,subtree:true});
+})()</script>
+</body>
+</html>
