@@ -81,13 +81,50 @@ const PROJECTS = [
     ],
     result: "A complete Shopify store experience, from the first visit to checkout, ready for the brand's own catalogue.",
     tags: ["Shopify", "E-commerce", "Storefront design"],
-    links: [],
+    links: [{ label: "Live store", url: "https://mohamedlghazi.github.io/glowskin/" }],
     shots: [
       ["glowskin/01-home", "Home page with the brand promise and key numbers"],
       ["glowskin/02-products", "Product catalogue with category filters"],
       ["glowskin/03-routines", "Duos and routines with subscription toggle"],
       ["glowskin/05-product", "Product page: ingredients, usage, reviews, one-time or subscription"],
       ["glowskin/07-cart", "Cart with promo code and free-shipping progress"]
+    ]
+  },
+  {
+    group: "free",
+    name: "UrbanWear",
+    kind: "Shopify store · Streetwear",
+    status: "Freelance project",
+    short: "Dark, bold streetwear store with quick-add, promo codes and a one-screen cash-on-delivery checkout.",
+    summary: "A Shopify store for a streetwear brand: a dark, high-contrast storefront, a 22-piece catalogue, quick-add by size and a fast checkout with cash on delivery.",
+    card: "assets/urbanwear/01-home.jpg",
+    bg: "assets/blur/urbanwear-home.jpg",
+    need: "A streetwear brand needs a store that looks like the brand, stays fast on a phone and makes buying quick, with cash on delivery for the local market.",
+    role: "Store design and development: storefront, product pages, cart, checkout and a lightweight mobile mode.",
+    points: [
+      "Collection of 22 pieces with gender, category and size filters, sorting and favourites",
+      "Quick-add by size on hover and instant search",
+      "Product page with details, care, exchange policy and reviews for each product",
+      "Cart with promo codes and free-shipping progress, then a one-screen checkout with cash on delivery",
+      "Size guide with a height and weight calculator",
+      "Tested end to end on desktop and mobile"
+    ],
+    result: "A complete store experience with its own look, from the first visit to a confirmed order, ready for the brand's own catalogue.",
+    tags: ["Shopify", "E-commerce", "Storefront design"],
+    links: [],
+    shots: [
+      ["urbanwear/01-home", "Home page with the brand gradient and a direct way into the collection"],
+      ["urbanwear/02-collection", "Collection with filters, sorting and quick-add by size"],
+      ["urbanwear/03-product", "Product page: details, care, exchange policy and reviews"],
+      ["urbanwear/04-product-cap", "Product page for an accessory, with the same clear details"],
+      ["urbanwear/05-cart", "Cart with promo code and free-shipping progress"],
+      ["urbanwear/06-checkout", "One-screen checkout with cash on delivery"],
+      ["urbanwear/07-selection", "Featured pieces with one-click add to cart"],
+      ["urbanwear/08-about", "About section with the brand's key numbers"],
+      ["urbanwear/09-reviews-contact", "Customer reviews and contact form"],
+      ["urbanwear/10-newsletter", "Newsletter sign-up with a welcome promo code"],
+      ["urbanwear/11-size-guide", "Size guide with a height and weight calculator"],
+      ["urbanwear/12-search", "Instant search by product name"]
     ]
   }
 ];
